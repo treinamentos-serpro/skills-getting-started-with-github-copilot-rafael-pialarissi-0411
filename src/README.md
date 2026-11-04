@@ -48,3 +48,17 @@ A aplicação usa um modelo de dados simples com identificadores significativos:
    - Série/Ano escolar
 
 Todos os dados são armazenados em memória, o que significa que os dados serão resetados quando o servidor reiniciar.
+
+## Testes do backend
+
+Na raiz do repositório, instale as dependências e execute:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pytest
+```
+
+Os testes ficam no diretório `tests/` e usam o `TestClient` do FastAPI,
+sem precisar iniciar o servidor. Cada teste recebe uma cópia independente dos
+dados em memória. A suíte cobre listagem, inscrições, duplicatas, limite de
+vagas, cancelamentos e respostas de erro.
